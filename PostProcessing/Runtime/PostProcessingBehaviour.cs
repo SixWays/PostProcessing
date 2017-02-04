@@ -9,7 +9,7 @@ namespace UnityEngine.PostProcessing
 #if UNITY_5_4_OR_NEWER
     [ImageEffectAllowedInSceneView]
 #endif
-    [RequireComponent(typeof(Camera)), DisallowMultipleComponent, ExecuteInEditMode]
+    [RequireComponent(typeof(Camera)), ExecuteInEditMode]
     [AddComponentMenu("Effects/Post-Processing Behaviour", -1)]
     public class PostProcessingBehaviour : MonoBehaviour
     {
@@ -172,7 +172,7 @@ namespace UnityEngine.PostProcessing
 
         // Classic render target pipeline for RT-based effects
         // Note that any effect that happens after this stack will work in LDR
-        [ImageEffectTransformsToLDR]
+        //[ImageEffectTransformsToLDR]
         void OnRenderImage(RenderTexture source, RenderTexture destination)
         {
             if (profile == null || m_Camera == null)
